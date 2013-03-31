@@ -1,11 +1,11 @@
 Summary:	A GNU collection of diff utilities
 Name:		diffutils
-Version:	3.2
-Release:	2
+Version:	3.3
+Release:	1
 License:	GPL
 Group:		Applications/Text
 Source0:	ftp://ftp.gnu.org/gnu/diffutils/%{name}-%{version}.tar.xz
-# Source0-md5:	26ff64c332429c830c154be46b393382
+# Source0-md5:	99180208ec2a82ce71f55b0d7389f1b3
 URL:		http://www.gnu.org/software/diffutils/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -27,7 +27,7 @@ merge two files interactively.
 %prep
 %setup -q
 
-sed -i "/gets is a security hole/d" lib/stdio.in.h
+%{__sed} -i "/gets is a security hole/d" lib/stdio.in.h
 
 %build
 %{__aclocal} -I m4
